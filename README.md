@@ -1,42 +1,56 @@
-# LDM-Tarea-XPath-ManuelParrillaLahoz
+# LDM · Tarea XPath · Manuel Parrilla Lahoz
 
-Práctica de consultas XPath sobre un catálogo técnico en XML.
+Práctica de consultas XPath sobre un catálogo de recursos técnicos en XML.
 
-Estructura del repositorio
-xml/recursos.xml: archivo de datos (30 recursos).
-xml/recursos.xsd: esquema de validación.
-consultas_xpath.xbook: notebook con enunciado, consulta y resultado de cada reto.
-README.md: documentación de la práctica.
-Retos resueltos
-Reto 1. Filtrado por contenido y estado
-Obtener los títulos de los recursos con categoría CSS y disponibles.
+## Objetivo
+Resolver 4 retos aplicando filtros, atributos, negaciones y selección de nodos en XPath.
 
-XPath:
+## Estructura del repositorio
+
+```text
+/xml/recursos.xml
+/xml/recursos.xsd
+consultas_xpath.xbook
+README.md
+```
+
+## Retos resueltos
+
+### 1) Filtrado por contenido y estado
+**Enunciado:** obtener los títulos de los recursos con categoría `CSS` y disponibles.
+
+```xpath
 //bibliotecaTecnica/recurso[categoria='CSS' and disponible='true']/titulo/text()
+```
 
-Reto 2. Atributos y negaciones
-Obtener los ID de los recursos cuyo formato no sea PDF.
+### 2) Atributos y negaciones
+**Enunciado:** obtener los ID de los recursos cuyo formato no sea `PDF`.
 
-XPath:
+```xpath
 //recurso[@formato!='PDF']/@id
+```
 
-Reto 3. Manejo de múltiples nodos (Autores)
-Obtener solo el primer autor del primer recurso publicado después de 2015.
+### 3) Múltiples nodos (autores)
+**Enunciado:** obtener solo el primer autor del primer recurso publicado después de 2015.
 
-XPath:
+```xpath
 //bibliotecaTecnica/recurso[anio > 2015][1]/autor[1]/text()
+```
 
-Reto 4. Nivel y categoría
-Obtener los títulos de los recursos de categoría XPath o XSLT con nivel 5.
+### 4) Nivel y categoría
+**Enunciado:** obtener los títulos de recursos de categoría `XPath` o `XSLT` con nivel `5`.
 
-XPath:
+```xpath
 //bibliotecaTecnica/recurso[(categoria='XPath' or categoria='XSLT') and nivel=5]/titulo/text()
+```
 
-Notas técnicas
-En este XML, formato es un atributo del recurso, por eso se usa @formato.
-El campo correcto para la dificultad es nivel.
-Para mostrar el contenido textual del nodo se usa text().
-Autor
-Alumno: Manuel Parrilla Lahoz
-Módulo: LDM
-Fecha: 19/03/2026
+## Notas técnicas
+- `formato` está definido como atributo (`@formato`).
+- El campo correcto de dificultad es `nivel`.
+- Para devolver texto plano del nodo se usa `text()`.
+
+## Autor
+- Alumno/a: **Manuel Parrilla Lahoz**
+- Módulo: **LDM**
+- Fecha: **19/03/2026**
+
