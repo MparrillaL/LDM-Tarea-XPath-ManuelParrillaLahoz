@@ -20,7 +20,7 @@ README.md
 **Enunciado:** obtener los títulos de los recursos con categoría `CSS` y disponibles.
 
 ```xpath
-//bibliotecaTecnica/recurso[categoria='CSS' and disponible='true']/titulo/text()
+//bibliotecaTecnica/recurso[categoria='CSS' and disponible='true']/titulo/string()
 ```
 
 ### 2) Atributos y negaciones
@@ -34,20 +34,17 @@ README.md
 **Enunciado:** obtener solo el primer autor del primer recurso publicado después de 2015.
 
 ```xpath
-//bibliotecaTecnica/recurso[anio > 2015][1]/autor[1]/text()
+//bibliotecaTecnica/recurso[anio > 2015][1]/autor[1]/string()
 ```
 
 ### 4) Nivel y categoría
 **Enunciado:** obtener los títulos de recursos de categoría `XPath` o `XSLT` con nivel `5`.
 
 ```xpath
-//bibliotecaTecnica/recurso[(categoria='XPath' or categoria='XSLT') and nivel=5]/titulo/text()
+//bibliotecaTecnica/recurso[(categoria='XPath' or categoria='XSLT') and nivel=5]/titulo/string()
 ```
 
-## Notas técnicas
-- `formato` está definido como atributo (`@formato`).
-- El campo correcto de dificultad es `nivel`.
-- Para devolver texto plano del nodo se usa `text()`.
+
 
 ## Autor
 - Alumno/a: **Manuel Parrilla Lahoz**
