@@ -27,7 +27,7 @@ README.md
 **Enunciado:** obtener los ID de los recursos cuyo formato no sea `PDF`.
 
 ```xpath
-//recurso[@formato!='PDF']/@id
+//recurso[@formato!='PDF']/@id/string()
 ```
 
 ### 3) Múltiples nodos (autores)
